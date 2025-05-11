@@ -22,6 +22,35 @@
             </tbody>
           </table>
     </div>
+    <div class="addBooks">
+      <button id="addBook">Add book</button>
+      <dialog id="dialog" any>
+        <form id="bookForm" method="dialog">
+          <label>
+            Author:
+            <input type="text" name="author" required>
+          </label>
+          <br>
+          <label>
+            Title:
+            <input type="text" name="title" required>
+          </label>
+          <br>
+          <label>
+            Pages:
+            <input type="number" name="pages" required>
+          </label>
+          <br>
+          <label>
+            Read:
+            <input type="checkbox" name="read">
+          </label>
+          <br>
+          <button type="submit">Add Book</button>
+          <button type="button" id="cancelDialog">Cancel</button>
+        </form>
+      </dialog      
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
