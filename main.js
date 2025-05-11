@@ -29,14 +29,14 @@ function displayBooks() {
         keys.forEach((key) => {
             const cell = document.createElement("td")
             cell.textContent =book[key];
-            row.appendChild(cell)
- 
+            row.appendChild(cell);
         });
         const deleteCell = document.createElement("td");
         const deleteButton = document.createElement("button");
+        deleteButton.textContent="Delete book"
+        deleteButton.setAttribute("data-id", book.ID)
         deleteCell.appendChild(deleteButton);
         row.appendChild(deleteCell);
-        
         bookTable.appendChild(row);
     });
 }
