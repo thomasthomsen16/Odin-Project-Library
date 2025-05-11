@@ -38,7 +38,26 @@ function displayBooks() {
         deleteCell.appendChild(deleteButton);
         row.appendChild(deleteCell);
         bookTable.appendChild(row);
+        
+        // Event listener to delete book
+        deleteButton.addEventListener("click", (e) => {
+            const bookIdToDelete = e.target.getAttribute("data-id");
+            deleteBook(bookIdToDelete);
+            displayBooks();
+        });
     });
+}
+
+//Function to delete book by ID
+
+function deleteBook(bookID) {
+    const indexDelete = myLibrary.findIndex((book) => book.ID === bookID);
+    console.log(indexDelete);
+    //Make the code does not remove the last item in the array if deleteIndex return -1
+    if(indexDelete!==-1){
+        //Remove one item from the array starting at indexDelete
+        myLibrary.splice(indexDelete,1)
+    }
 }
 
 // Open modal
