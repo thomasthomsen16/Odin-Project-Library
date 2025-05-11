@@ -30,7 +30,13 @@ function displayBooks() {
             const cell = document.createElement("td")
             cell.textContent =book[key];
             row.appendChild(cell)
+ 
         });
+        const deleteCell = document.createElement("td");
+        const deleteButton = document.createElement("button");
+        deleteCell.appendChild(deleteButton);
+        row.appendChild(deleteCell);
+        
         bookTable.appendChild(row);
     });
 }
@@ -47,10 +53,11 @@ document.getElementById("cancelDialog").addEventListener("click", () => {
     dialog.close();
 });
 
-
+// Prevent default behaviour for dialog and handle form subtion manually myself in JS.
 document.getElementById("bookForm").addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent form from submitting to a server
 
+    // Sets 
     const form = e.target;
     const author = form.author.value;
     const title = form.title.value;
@@ -63,8 +70,3 @@ document.getElementById("bookForm").addEventListener("submit", (e) => {
     form.reset(); // Clear form inputs
     dialog.close();
 });
-
-book1=addBookToLibrary("ksdfh", "sldfjksdf",39,false)
-book2=addBookToLibrary("haha", "yaya",45,true)
-
-displayBooks()
